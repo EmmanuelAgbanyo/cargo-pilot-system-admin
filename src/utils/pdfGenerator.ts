@@ -1,6 +1,11 @@
 
 import { Shipment } from '../types';
-import { formatCurrency, formatDate } from './shipmentService';
+import { formatDate } from './shipmentService';
+
+// Update formatCurrency function to use dollars
+export const formatCurrency = (amount: number): string => {
+  return `$${amount.toFixed(2)}`;
+};
 
 export const generateInvoicePDF = (shipment: Shipment): void => {
   // Create a new window for the invoice
@@ -127,8 +132,8 @@ export const generateInvoicePDF = (shipment: Shipment): void => {
       <div class="invoice-container">
         <div class="invoice-header">
           <div class="company-details">
-            <h2>ACMS Logistics</h2>
-            <p>123 Main Street, Accra<br>Ghana<br>Email: info@acms.com<br>Tel: +233 20 123 4567</p>
+            <h2>ExpressLogistics</h2>
+            <p>425 Park Avenue,<br>Floor 22,<br>New York, NY 10022<br>Email: xpresslogisticsinc@outlook.com<br>Website: https://express-logistics-inc.vercel.app/</p>
           </div>
           <div class="invoice-details">
             <h2>INVOICE</h2>
@@ -209,3 +214,4 @@ export const generateInvoicePDF = (shipment: Shipment): void => {
   invoiceWindow.document.write(invoiceHtml);
   invoiceWindow.document.close();
 };
+

@@ -1,5 +1,6 @@
 
 import { Shipment, ShipmentStatus } from '../types';
+import { formatCurrency } from './pdfGenerator';
 
 const STORAGE_KEY = 'shipments';
 
@@ -122,11 +123,6 @@ export const getShipmentStatistics = () => {
     inTransit: shipments.filter(s => s.status === 'In Transit').length,
     pending: shipments.filter(s => s.status === 'Pending').length
   };
-};
-
-// Format currency (GHS)
-export const formatCurrency = (amount: number): string => {
-  return `GHS ${amount.toFixed(2)}`;
 };
 
 // Format date
