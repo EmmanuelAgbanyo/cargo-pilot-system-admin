@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shipment, ShipmentStatus } from '../types';
@@ -63,7 +62,9 @@ const ShipmentForm = ({ shipment, onSave, isEdit = false }: ShipmentFormProps) =
       setIsSaving(true);
       
       const shipmentData = {
-        ...values,
+        sender: values.sender,
+        receiver: values.receiver,
+        route: values.route,
         cost: Number(values.cost),
         status: values.status as ShipmentStatus,
       };
@@ -76,7 +77,7 @@ const ShipmentForm = ({ shipment, onSave, isEdit = false }: ShipmentFormProps) =
         });
         toast.success('Shipment updated successfully');
       } else {
-        const newShipment = onSave(shipmentData);
+        onSave(shipmentData);
         toast.success('Shipment added successfully');
       }
       

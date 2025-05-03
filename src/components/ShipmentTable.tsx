@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { Shipment } from '../types';
-import { formatCurrency } from '../utils/pdfGenerator';
+import { formatCurrency } from '../utils/formatUtils';
 import { deleteShipment } from '../utils/shipmentService';
 import { useState } from 'react';
 import StatusBadge from './StatusBadge';
