@@ -1,11 +1,5 @@
-
 import { Shipment } from '../types';
-import { formatDate } from './shipmentService';
-
-// Update formatCurrency function to use dollars
-export const formatCurrency = (amount: number): string => {
-  return `$${amount.toFixed(2)}`;
-};
+import { formatCurrency, formatDate } from './formatUtils';
 
 export const generateInvoicePDF = (shipment: Shipment): void => {
   // Create a new window for the invoice
@@ -214,4 +208,3 @@ export const generateInvoicePDF = (shipment: Shipment): void => {
   invoiceWindow.document.write(invoiceHtml);
   invoiceWindow.document.close();
 };
-

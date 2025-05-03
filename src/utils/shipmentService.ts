@@ -1,6 +1,4 @@
-
 import { Shipment, ShipmentStatus } from '../types';
-import { formatCurrency } from './pdfGenerator';
 
 const STORAGE_KEY = 'shipments';
 
@@ -123,12 +121,6 @@ export const getShipmentStatistics = () => {
     inTransit: shipments.filter(s => s.status === 'In Transit').length,
     pending: shipments.filter(s => s.status === 'Pending').length
   };
-};
-
-// Format date
-export const formatDate = (dateString?: string): string => {
-  if (!dateString) return 'N/A';
-  return new Date(dateString).toLocaleString();
 };
 
 // Get status class name for styling
