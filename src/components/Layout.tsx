@@ -1,7 +1,8 @@
 
 import { ReactNode } from 'react';
-import Sidebar from './Sidebar';
+import { SidebarProvider } from './Sidebar';
 import AuthGuard from './AuthGuard';
+import AppSidebar from './AppSidebar';
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,12 +11,14 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <AuthGuard>
-      <div className="flex min-h-screen">
-        <Sidebar />
-        <main className="main-content w-full">
-          {children}
-        </main>
-      </div>
+      <SidebarProvider>
+        <div className="flex min-h-screen">
+          <AppSidebar />
+          <main className="main-content w-full">
+            {children}
+          </main>
+        </div>
+      </SidebarProvider>
     </AuthGuard>
   );
 };
