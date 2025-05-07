@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import AddShipment from "./pages/AddShipment";
 import ShipmentList from "./pages/ShipmentList";
 import ShipmentDetails from "./pages/ShipmentDetails";
+import ShipmentMap from "./pages/ShipmentMap";
 import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/add-shipment" element={<AddShipment />} />
           <Route path="/shipments" element={<ShipmentList />} />
           <Route path="/shipment/:id" element={<ShipmentDetails />} />
+          <Route path="/shipment-map" element={<ShipmentMap />} />
           
           {/* Catch all route */}
           <Route path="*" element={<NotFound />} />
