@@ -1,6 +1,13 @@
-# Welcome to your Lovable project
+# Shipment Tracking Application
 
-## Project info
+## Project Overview
+
+Welcome to the Shipment Tracking Application! This application helps you manage and track your shipments with ease.
+
+**Key Features:**
+*   **Add Shipments:** Easily add new shipments with relevant details such as origin, destination, and current status.
+*   **View Shipment Details:** Get a comprehensive view of each shipment, including its history and estimated delivery date.
+*   **Track Shipments on a Map:** Visualize the current location of your shipments on an interactive map.
 
 **URL**: https://lovable.dev/projects/2e4056f0-acc3-4e19-821f-cf4d5d8ebd77
 
